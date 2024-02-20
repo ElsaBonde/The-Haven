@@ -11,7 +11,7 @@ const Head = styled.header`
   text-transform: uppercase;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 20px;
+  margin: 0px 30px;
 `;
 
 const Name = styled.h1`
