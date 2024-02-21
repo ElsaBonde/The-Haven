@@ -7,15 +7,17 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import Homepage from "./pages/OurRooms.tsx";
 import RoomPage from "./pages/RoomPage.tsx";
+import Homepage from "./pages/StartPage.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" Component={App}>
+    <Route>
       <Route index Component={Homepage} />
-      <Route path="rooms/:id" Component={RoomPage} />
-      <Route path="*" element={<span>Sidan finns inte..</span>} />
+      <Route Component={App}>
+        <Route path="rooms/:id" Component={RoomPage} />
+        <Route path="*" element={<span>Sidan finns inte..</span>} />
+      </Route>
     </Route>
   )
 );
