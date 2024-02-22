@@ -13,11 +13,13 @@ import QuotesPage from "./pages/QuotesPage.tsx";
 import RoomPage from "./pages/RoomPage.tsx";
 import Homepage from "./pages/StartPage.tsx";
 import YogaPage from "./pages/YogaPage.tsx";
+import SideMenu from "./SideMenu.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route index Component={Homepage} />
+      <Route path="menu" Component={SideMenu} />
       <Route Component={App}>
         <Route path="our-rooms" Component={OurRooms} />
         <Route path="our-rooms/:id" Component={RoomPage} />

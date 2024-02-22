@@ -51,6 +51,7 @@ const BookingButton = styled.button`
   padding: 15px;
   border: 1px solid #183717;
   width: 23%;
+  cursor: pointer;
 
   &:hover {
     background-color: #6a8e68;

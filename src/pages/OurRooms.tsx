@@ -82,7 +82,7 @@ const StyledLink = styled(Link)`
   margin-bottom: 25px;
 
   &:hover {
-    padding-left: 10px;
+    transform: translateX(10px);
     color: #6a8e68;
     border-bottom: 1px solid #6a8e68;
     transition: color 0.9s ease;
