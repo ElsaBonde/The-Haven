@@ -80,6 +80,7 @@ const StyledLink = styled(Link)`
   margin-bottom: 25px;
 
   &:hover {
+    padding-left: 10px;
     color: #6a8e68;
     border-bottom: 1px solid #6a8e68;
     transition: color 0.9s ease;
@@ -98,6 +99,7 @@ const BookingButton = styled.button`
   padding: 15px;
   border: 1px solid #183717;
   width: 30%;
+  cursor: pointer;
 
   &:hover {
     background-color: #6a8e68;
@@ -108,6 +110,7 @@ const BookingButton = styled.button`
 
 export default function OurRooms() {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const nextSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide === mockedRoom.length - 1 ? 0 : prevSlide + 1

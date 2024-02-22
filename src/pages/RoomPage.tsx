@@ -44,6 +44,7 @@ const ReserveButton = styled.button`
   padding: 15px;
   border: 1px solid #183717;
   width: 36%;
+  cursor: pointer;
 
   &:hover {
     background-color: #6a8e68;
