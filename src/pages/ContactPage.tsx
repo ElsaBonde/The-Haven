@@ -1,4 +1,7 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
+import { z } from "zod";
 
 const TextDiv = styled.div`
   flex-basis: 50%;
@@ -15,10 +18,19 @@ const SiteTitle = styled.p`
 
 const SmallText = styled.p`
   font-size: 17px;
+  margin: 5px 0px;
 `;
 
 const SecondTitle = styled.p`
   font-size: 25px;
+  margin: 18px 0px 10px 0px;
+`;
+
+const Line = styled.div`
+width: 2px;
+height: 70%;
+background-color: #183717;
+margin: auto 80px;
 `;
 
 const FormDiv = styled.div`
@@ -43,17 +55,16 @@ const Label = styled.label`
   font-weight: 900;
   color: #183717;
   padding-bottom: 3px;
+  margin-top: 15px;
 `;
 
 const InputField = styled.input`
-  margin-bottom: 15px;
   padding: 7px 5px;
   font-family: "Ledger";
   color: #183717;
 `;
 
 const MessageArea = styled.textarea`
-  margin-bottom: 15px;
   padding: 7px 5px;
   font-family: "Ledger";
   color: #183717;
@@ -80,7 +91,39 @@ const SendButton = styled.button`
   }
 `;
 
+const ErrorMessage = styled.p`
+margin: 0;
+padding: 3px 0 0 0;
+font-size: 10px;
+color: #CE0E0E;
+`;
+
+
 export default function ContactPage() {
+  const MessageSchema = z.object({
+    name: z.string(),
+    surname: z.string(),
+    email: z.string().email({
+      message:
+        "Please enter a valid email address in the following format: name@example.com",
+    }),
+    subject: z.string(),
+    message: z
+      .string()
+      .max(300, { message: "Oops! Your message can't exceed 300 characters." }),
+  });
+
+  type Message = z.infer<typeof MessageSchema>;
+
+  const form = useForm<Message>({
+    resolver: zodResolver(MessageSchema),
+  });
+
+  const sendMessage = () => {
+    console.log("Message Sent")
+    form.reset();
+  };
+
   return (
     <>
       <TextDiv>
@@ -101,24 +144,38 @@ export default function ContactPage() {
           Thank you for considering The Haven for your wellness retreat!
         </SmallText>
       </TextDiv>
+      <Line></Line>
       <FormDiv>
-        <Form>
+        <Form onSubmit={form.handleSubmit(sendMessage)}>
           <Label htmlFor="firstname">Firstname:</Label>
-          <InputField id="firstname" placeholder="Example: John"></InputField>
+          <InputField id="firstname" placeholder="Example: John" {...form.register("name")}></InputField>
           <Label htmlFor="surname">Surname:</Label>
-          <InputField id="surname" placeholder="Example: Doe"></InputField>
+          <InputField id="surname" placeholder="Example: Doe" {...form.register("surname")}></InputField>
           <Label htmlFor="emailaddress">Email address:</Label>
           <InputField
             id="emailaddress"
             placeholder="Example: info@thehaven.com"
+            {...form.register("email")}
+            
           ></InputField>
+          {form.formState.errors.email?.message && (
+            <ErrorMessage>
+              {form.formState.errors.email?.message}
+            </ErrorMessage>
+          )}
           <Label htmlFor="subject">Subject:</Label>
-          <InputField id="subject" placeholder="Example: Booking"></InputField>
+          <InputField id="subject" placeholder="Example: Booking" {...form.register("subject")}></InputField>
           <Label htmlFor="message">Message:</Label>
           <MessageArea
             id="message"
-            placeholder="Example: Hello dear guest, here you can write your message."
+            placeholder="Example: Hello dear guest, you can write your message here."
+            {...form.register("message")}
           ></MessageArea>
+          {form.formState.errors.message?.message && (
+            <ErrorMessage>
+              {form.formState.errors.message?.message}
+            </ErrorMessage>
+          )}
           <SendButton>Send Message</SendButton>
         </Form>
       </FormDiv>

@@ -5,10 +5,8 @@ import room1Image from "../assets/room1.png";
 import room2Image from "../assets/room2.png";
 import room3Image from "../assets/room3.png";
 
-
-
 const TextDiv = styled.div`
-flex-basis: 40%;
+flex-basis: 45%;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -54,17 +52,17 @@ const ReserveButton = styled.button`
 `;
 
 const PhotoDiv = styled.div`
-flex-basis: 60%;
+flex-basis: 65%;
   flex-grow: 1;
   justify-content: center; 
   align-items: center; 
   margin: 80px 0px;
+  margin-right: 80px;
 `;
 
 const RoomImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
 `;
 
 export default function RoomPage() {

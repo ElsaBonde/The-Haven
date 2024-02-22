@@ -20,6 +20,7 @@ function getImage(id: string): string {
 }
 
 const PhotoDiv = styled.div`
+  flex-basis: 45%;
   display: flex;
   align-items: center;
   margin: 0px 30px;
@@ -53,6 +54,7 @@ const Image = styled.img`
 `;
 
 const TextDiv = styled.div`
+  flex-basis: 55%;
   margin: 0px 30px;
   display: flex;
   flex-direction: column;
@@ -98,7 +100,7 @@ const BookingButton = styled.button`
   border-radius: 5px;
   padding: 15px;
   border: 1px solid #183717;
-  width: 30%;
+  width: 25%;
   cursor: pointer;
 
   &:hover {
