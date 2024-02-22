@@ -4,9 +4,9 @@ import yogaImage from "../assets/yoga.jpg";
 const PhotoDiv = styled.div`
   flex-basis: 50%;
   flex-grow: 1;
-  justify-content: center; /* Centrerar horisontellt */
-  align-items: center; /* Centrerar vertikalt */
-margin: 80px 0px;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0px;
 `;
 
 const Image = styled.img`
@@ -72,9 +72,10 @@ export default function YogaPage() {
         <Text>
           We prioritize your well-being both in mind and spirit, and therefore
           offer a variety of yoga classes suitable for both beginners and more
-          experienced practitioners.<br></br> As a guest at the resort, you also have the
-          opportunity to attend all yoga classes free of charge, subject to
-          availability. <br></br><br></br>Questions? Contact us at +46 73 893 94 75.
+          experienced practitioners.<br></br> As a guest at the resort, you also
+          have the opportunity to attend all yoga classes free of charge,
+          subject to availability. <br></br>
+          <br></br>Questions? Contact us at +46 73 893 94 75.
         </Text>
         <BookingButton>Book Class</BookingButton>
       </TextDiv>

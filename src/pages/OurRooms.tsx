@@ -120,7 +120,7 @@ export default function OurRooms() {
   };
 
   return (
-<>
+    <>
       <PhotoDiv>
         <PrevNextButton onClick={prevSlide}>&lt;</PrevNextButton>
         <CarouselContainer>
@@ -147,6 +147,6 @@ export default function OurRooms() {
 
         <BookingButton>Book now</BookingButton>
       </TextDiv>
-      </>
+    </>
   );
 }
