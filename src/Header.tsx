@@ -12,7 +12,9 @@ const Head = styled.header`
   text-transform: uppercase;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 30px;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
 `;
 
 const Name = styled(Link)`
@@ -38,9 +40,8 @@ const LinkNav = styled(Link)`
   text-decoration: none;
   color: #183717;
 
-
   &:hover {
-    color: #C59267;
+    color: #c59267;
     transition: color 1.5s ease;
   }
 `;

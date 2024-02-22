@@ -32,6 +32,7 @@ const PrevNextButton = styled.button`
   font-family: "Karla", sans-serif;
   font-size: 25px;
   color: #183717;
+  cursor: pointer;
 `;
 
 const CarouselContainer = styled.div`
