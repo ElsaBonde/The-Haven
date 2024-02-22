@@ -19,14 +19,6 @@ function getImage(id: string): string {
   }
 }
 
-const BackgroundDiv = styled.div`
-  background: #efdccc;
-  display: flex;
-  font-family: "Ledger";
-  color: #183717;
-  height: 100%;
-`;
-
 const PhotoDiv = styled.div`
   display: flex;
   align-items: center;
@@ -128,7 +120,7 @@ export default function OurRooms() {
   };
 
   return (
-    <BackgroundDiv>
+<>
       <PhotoDiv>
         <PrevNextButton onClick={prevSlide}>&lt;</PrevNextButton>
         <CarouselContainer>
@@ -148,13 +140,13 @@ export default function OurRooms() {
         <SiteTitle>Rooms</SiteTitle>
         <SubTitle>Discover our hospitality</SubTitle>
         {mockedRoom.map((room) => (
-          <StyledLink key={room.title} to={"/rooms/" + room.id}>
+          <StyledLink key={room.title} to={"/our-rooms/" + room.id}>
             {room.title}
           </StyledLink>
         ))}
 
         <BookingButton>Book now</BookingButton>
       </TextDiv>
-    </BackgroundDiv>
+      </>
   );
 }

@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import hamburgerMenu from "../assets/hamburgermenu.png";
 import hotelRoom from "../assets/hotelroom.jpg";
 import BackgroundImage from "../assets/maybebackground.jpg";
+import hamburgerMenu from "../assets/whitehamburgermenu.png";
 import whitePhone from "../assets/whitephone.png";
 import whiteYoga from "../assets/whiteyoga.png";
 
@@ -40,11 +41,18 @@ const Navbar = styled.div`
   gap: 35px;
 `;
 
-const LinkNav = styled.div`
+const LinkNav = styled(Link)`
   display: flex;
   align-items: center;
   gap: 7px;
-  font-weight: 800;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    color: #C59267;
+    transition: color 1.5s ease;
+  }
 `;
 
 const ImgNav = styled.div<{ backgroundImage: string }>`
@@ -73,9 +81,9 @@ const FirstPageImg = styled.div<{ backgroundImage: string }>`
 
 const TextBox = styled.h1`
   grid-column-start: 3;
-  grid-column-end: 6;
+  grid-column-end: 5;
   grid-row-start: 2;
-  grid-row-end: 5;
+  grid-row-end: 4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,35 +91,34 @@ const TextBox = styled.h1`
   color: white;
   font-family: "Ledger";
   font-weight: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 55%;
-  height: 90%;
   z-index: 1;
 `;
 
-const ButtonForRooms = styled.button`
+const ButtonForRooms = styled(Link)`
   grid-column-start: 3;
-  grid-column-end: 6;
-  grid-row-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 4;
   grid-row-end: 5;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 15px;
   color: white;
-  font-weight: 600;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px;
+  font-weight: 700;
   z-index: 1;
+  margin: 15px 45px;
   background-color: transparent;
   border: 2px solid white;
   font-family: "Karla", sans-serif;
   text-transform: uppercase;
   border-radius: 3px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: white;
+    color: #183717;
+    transition: color 1.5s ease;
+  }
 `;
 
 const Main = styled.main`
@@ -140,15 +147,15 @@ export default function StartPage() {
           <SubName>Resort and yoga</SubName>
         </NameDiv>
         <Navbar>
-          <LinkNav>
+          <LinkNav to="yoga">
             <ImgNav backgroundImage={whiteYoga} />
             Yoga
           </LinkNav>
-          <LinkNav>
-            <ImgNav backgroundImage={whitePhone} />
+          <LinkNav to="contact">
+            <ImgNav backgroundImage={whitePhone}/>
             Contact
           </LinkNav>
-          <LinkNav>
+          <LinkNav to="menu">
             <HamburgerMenu backgroundImage={hamburgerMenu} />
           </LinkNav>
         </Navbar>
@@ -158,7 +165,7 @@ export default function StartPage() {
         <TextBox>
           Discover<br></br>Your<br></br> Sanctury
         </TextBox>
-        <ButtonForRooms>Our Rooms</ButtonForRooms>
+          <ButtonForRooms to="/our-rooms">Our Rooms</ButtonForRooms>
       </Main>
     </OuterDiv>
   );

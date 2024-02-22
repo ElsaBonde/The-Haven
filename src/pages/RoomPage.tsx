@@ -1,5 +1,10 @@
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import { mockedRoom } from "../rooms";
+
+const TextDiv = styled.div``;
+
+const PhotoDiv = styled.div``;
 
 export default function Header() {
   const params = useParams();
@@ -13,11 +18,13 @@ export default function Header() {
     );
   }
   return (
-    <div>
+    <>
+      <TextDiv></TextDiv>
       <h1>ProductPage</h1>
       {room.title}
       {room.subtitle}
       {room.description}
-    </div>
+      <PhotoDiv></PhotoDiv>
+    </>
   );
 }
