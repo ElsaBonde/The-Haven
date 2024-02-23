@@ -25,6 +25,7 @@ const CarouselContainer = styled.div`
   height: auto;
   position: relative;
   overflow-x: hidden;
+  z-index: 1;
 `;
 
 const ImageOfRooms = styled.div`
@@ -117,7 +118,7 @@ export default function OurRooms() {
         <PrevNextButton onClick={prevSlide}>&lt;</PrevNextButton>
         <CarouselContainer>
           <ImageOfRooms
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            style={{ transform: `translateX(-${currentSlide * 100}%)`}}
           >
             {mockedRoom.map((room) => (
               <Image key={room.id} src={room.image} alt={room.title} />
