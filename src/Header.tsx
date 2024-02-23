@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import SideMenu from "./SideMenu";
 
 const Head = styled.header`
   display: flex;
@@ -43,22 +45,13 @@ const LinkNav = styled(Link)`
   }
 `;
 
-const ImgNav = styled.div<{ backgroundImage: string }>`
-  width: 18px;
-  height: 18px;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-`;
-
-const HamburgerMenu = styled.div<{ backgroundImage: string }>`
-  width: 30px;
-  height: 18px;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-`;
-
 export default function Header() {
   /* isOpen state */
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <Head>
@@ -72,10 +65,11 @@ export default function Header() {
           <span className="material-symbols-outlined">call</span>
           Contact
         </LinkNav>
-        <LinkNav to="menu"><span className="material-symbols-outlined">
-menu
-</span></LinkNav>
+        <LinkNav to="#" onClick={toggleMenu}>
+          <span className="material-symbols-outlined">menu</span>
+        </LinkNav>
       </Navbar>
+      <SideMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
       {/* SIDEBAR isOpen={isOpen} onClose={() => setIsOpen(false)} */}
     </Head>
   );

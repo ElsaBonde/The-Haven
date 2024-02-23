@@ -2,6 +2,17 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SideImage from "./assets/waterfall.jpg";
 
+const SideMenuContainer = styled.div<{ isOpen: boolean }>`
+  position: absolute;
+  top: 0;
+  right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+  width: 100%;
+  height: 100vh;
+  background-color: #183717;
+  transition: right 1.2s ease;
+  z-index: 999;
+`;
+
 const Head = styled.header`
   position: absolute;
   top: 0;
@@ -141,9 +152,14 @@ const NavLink = styled(Link)`
   }
 `;
 
-export default function SideMenu() {
+interface SideMenuProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+}
+
+const SideMenu = ({ isOpen, toggleMenu }: SideMenuProps) => {
   return (
-    <>
+    <SideMenuContainer isOpen={isOpen}>
       <Head>
         <NameDiv to="/">
           <Name>
@@ -152,14 +168,14 @@ export default function SideMenu() {
           <SubName>Resort and yoga</SubName>
         </NameDiv>
         <Navbar>
-          <LinkNav to="/yoga">
+          <LinkNav to="/yoga" onClick={toggleMenu}>
             <span className="material-symbols-outlined">self_improvement</span>
             Yoga
           </LinkNav>
-          <LinkNav to="/contact">
+          <LinkNav to="/contact" onClick={toggleMenu}>
             <span className="material-symbols-outlined">call</span>Contact
           </LinkNav>
-          <LinkNav to="menu">
+          <LinkNav to="#" onClick={toggleMenu}>
             <span className="material-symbols-outlined">close</span>
           </LinkNav>
         </Navbar>
@@ -178,13 +194,15 @@ export default function SideMenu() {
         </GridDiv>
         <NavDiv>
           <LinksList>
-            <NavLink to="/our-rooms">Our Rooms</NavLink>
-            <NavLink to="/yoga"> Yoga</NavLink>
-            <NavLink to="/contact">Connect With Us</NavLink>
-            <NavLink to="/inspirational-quotes">Inspirational Quotes</NavLink>
+            <NavLink to="/our-rooms" onClick={toggleMenu}>Our Rooms</NavLink>
+            <NavLink to="/yoga" onClick={toggleMenu}> Yoga</NavLink>
+            <NavLink to="/contact" onClick={toggleMenu}>Connect With Us</NavLink>
+            <NavLink to="/inspirational-quotes" onClick={toggleMenu}>Inspirational Quotes</NavLink>
           </LinksList>
         </NavDiv>
       </Main>
-    </>
+    </SideMenuContainer>
   );
-}
+};
+
+export default SideMenu;

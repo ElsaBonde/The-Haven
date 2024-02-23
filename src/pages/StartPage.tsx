@@ -52,20 +52,6 @@ const LinkNav = styled(Link)`
   }
 `;
 
-const ImgNav = styled.div<{ backgroundImage: string }>`
-  width: 18px;
-  height: 18px;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-`;
-
-const HamburgerMenu = styled.div<{ backgroundImage: string }>`
-  width: 30px;
-  height: 18px;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-`;
-
 const FirstPageImg = styled.div<{ backgroundImage: string }>`
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;

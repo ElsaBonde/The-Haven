@@ -1,9 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { mockedRoom } from "../rooms";
-import room1Image from "../assets/room1.png";
-import room2Image from "../assets/room2.png";
-import room3Image from "../assets/room3.png";
 
 const TextDiv = styled.div`
 flex-basis: 45%;
