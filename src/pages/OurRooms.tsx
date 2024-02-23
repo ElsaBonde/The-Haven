@@ -1,23 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import room1Image from "../assets/room1.png";
-import room2Image from "../assets/room2.png";
-import room3Image from "../assets/room3.png";
 import { mockedRoom } from "../rooms";
-
-function getImage(id: string): string {
-  switch (id) {
-    case "1":
-      return room1Image;
-    case "2":
-      return room2Image;
-    case "3":
-      return room3Image;
-    default:
-      return "";
-  }
-}
 
 const PhotoDiv = styled.div`
   flex-basis: 45%;
@@ -40,15 +24,17 @@ const CarouselContainer = styled.div`
   width: 100%;
   height: auto;
   position: relative;
+  overflow-x: hidden;
 `;
 
 const ImageOfRooms = styled.div`
-  transition: transform 0.5s ease;
-  margin: 0px 10px;
+  transition: transform 5s ease;
+  margin: 0px;
+  display: flex;
 `;
 const Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 `;
@@ -130,12 +116,12 @@ export default function OurRooms() {
       <PhotoDiv>
         <PrevNextButton onClick={prevSlide}>&lt;</PrevNextButton>
         <CarouselContainer>
-          <ImageOfRooms style={{ transform: `translateX(-${currentSlide}%)` }}>
-            <Image
-              key={mockedRoom[currentSlide].id}
-              src={getImage(mockedRoom[currentSlide].id)}
-              alt={mockedRoom[currentSlide].title}
-            />
+          <ImageOfRooms
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {mockedRoom.map((room) => (
+              <Image key={room.id} src={room.image} alt={room.title} />
+            ))}
           </ImageOfRooms>
         </CarouselContainer>
 

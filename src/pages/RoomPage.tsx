@@ -81,21 +81,6 @@ export default function RoomPage() {
   //gör om <br> till ett mellanslag då html och js har olika syntax
   const descriptionWithSpaces = room.description.replace(/<br\s*\/?>/gi, "\n");
 
-  let imageSrc;
-  switch (room.id) {
-    case "1":
-      imageSrc = room1Image;
-      break;
-    case "2":
-      imageSrc = room2Image;
-      break;
-    case "3":
-      imageSrc = room3Image;
-      break;
-    default:
-      imageSrc = room1Image;
-  }
-
   return (
     <>
       <TextDiv>
@@ -105,7 +90,14 @@ export default function RoomPage() {
       <ReserveButton>Make reservation</ReserveButton>
       </TextDiv>
       <PhotoDiv>
-      <RoomImage src={imageSrc} alt={room.title} />
+      {mockedRoom.map((room) => {
+        if (room.id === params.id) {
+          return (
+            <RoomImage key={room.id} src={room.image} alt={room.title} />
+          );
+        }
+        return null;
+      })}
       </PhotoDiv>
     </>
   );

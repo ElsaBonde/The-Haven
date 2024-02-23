@@ -1,3 +1,7 @@
+import room1Image from "./assets/room1.png";
+import room2Image from "./assets/room2.png";
+import room3Image from "./assets/room3.png";
+
 export interface Room {
   id: string;
   image: string;
@@ -9,7 +13,7 @@ export interface Room {
 export const mockedRoom: Room[] = [
   {
     id: "1",
-    image: "../assets/room1.png",
+    image: room1Image,
     title: "Nature Room",
     subtitle: "Inspired by the mighty nature",
     description:
@@ -17,7 +21,7 @@ export const mockedRoom: Room[] = [
   },
   {
     id: "2",
-    image: "../assets/room2.png",
+    image: room2Image,
     title: "Flower And Garden Room",
     subtitle: "Embrace nature's beauty",
     description:
@@ -25,7 +29,7 @@ export const mockedRoom: Room[] = [
   },
   {
     id: "3",
-    image: "../assets/room3.png",
+    image: room3Image,
     title: "Luxury Room",
     subtitle: "Indulge in opulence and comfort",
     description:

@@ -2,9 +2,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import hotelRoom from "../assets/hotelroom.jpg";
 import BackgroundImage from "../assets/maybebackground.jpg";
-import hamburgerMenu from "../assets/whitehamburgermenu.png";
-import whitePhone from "../assets/whitephone.png";
-import whiteYoga from "../assets/whiteyoga.png";
 
 const Head = styled.header`
   display: flex;
@@ -50,7 +47,7 @@ const LinkNav = styled(Link)`
   color: white;
 
   &:hover {
-    color: #C59267;
+    color: #c59267;
     transition: color 1.5s ease;
   }
 `;
@@ -148,15 +145,15 @@ export default function StartPage() {
         </NameDiv>
         <Navbar>
           <LinkNav to="yoga">
-            <ImgNav backgroundImage={whiteYoga} />
+            <span className="material-symbols-outlined">self_improvement</span>
             Yoga
           </LinkNav>
           <LinkNav to="contact">
-            <ImgNav backgroundImage={whitePhone}/>
+            <span className="material-symbols-outlined">call</span>
             Contact
           </LinkNav>
           <LinkNav to="menu">
-            <HamburgerMenu backgroundImage={hamburgerMenu} />
+            <span className="material-symbols-outlined">menu</span>
           </LinkNav>
         </Navbar>
       </Head>
@@ -165,7 +162,7 @@ export default function StartPage() {
         <TextBox>
           Discover<br></br>Your<br></br> Sanctury
         </TextBox>
-          <ButtonForRooms to="/our-rooms">Our Rooms</ButtonForRooms>
+        <ButtonForRooms to="/our-rooms">Our Rooms</ButtonForRooms>
       </Main>
     </OuterDiv>
   );

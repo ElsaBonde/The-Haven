@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SideImage from "./assets/waterfall.jpg";
-import whitePhone from "./assets/whitephone.png";
-import whiteYoga from "./assets/whiteyoga.png";
 
 const Head = styled.header`
   position: absolute;
@@ -19,7 +17,9 @@ const Head = styled.header`
   z-index: 2;
 `;
 
-const NameDiv = styled.div`
+const NameDiv = styled(Link)`
+  text-decoration: none;
+  color: white;
   display: flex;
   flex-direction: column;
 `;
@@ -58,13 +58,6 @@ const LinkNav = styled(Link)`
   }
 `;
 
-const ImgNav = styled.div<{ backgroundImage: string }>`
-  width: 18px;
-  height: 18px;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-`;
-
 const Main = styled.main`
   position: relative;
   height: 100%;
@@ -93,15 +86,30 @@ const Info = styled.div`
 `;
 
 const FatText = styled.p`
-font-weight: 800;
+  font-weight: 800;
   text-transform: uppercase;
   font-size: 15px;
   margin-bottom: 5px;
 `;
 
+const MapsLink = styled(Link)`
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    transform: translateX(10px);
+    color: #c59267;
+    transition: color 1.5s ease;
+  }
+`;
+
 const SmallText = styled.p`
-margin: 0;
-font-size: 14px;
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 15px;
 `;
 
 const NavDiv = styled.div`
@@ -137,7 +145,7 @@ export default function SideMenu() {
   return (
     <>
       <Head>
-        <NameDiv>
+        <NameDiv to="/">
           <Name>
             The<br></br> Haven
           </Name>
@@ -145,30 +153,33 @@ export default function SideMenu() {
         </NameDiv>
         <Navbar>
           <LinkNav to="/yoga">
-            <ImgNav backgroundImage={whiteYoga} />
+            <span className="material-symbols-outlined">self_improvement</span>
             Yoga
           </LinkNav>
           <LinkNav to="/contact">
-            <ImgNav backgroundImage={whitePhone} />
-            Contact
+            <span className="material-symbols-outlined">call</span>Contact
           </LinkNav>
-          {/* ändra till kryss och gå till sidan man va innan   <LinkNav to="menu">
-            <HamburgerMenu backgroundImage={hamburgerMenu} />
-          </LinkNav> */}
+          <LinkNav to="menu">
+            <span className="material-symbols-outlined">close</span>
+          </LinkNav>
         </Navbar>
       </Head>
       <Main>
         <GridDiv>
           <Info>
             <FatText>Locate us</FatText>
-            <SmallText>Solgården 21, Alafors<br></br>44951 Sweden</SmallText>
-            <FatText>Get Directions &gt;</FatText>
+            <SmallText>
+              Solgården 21, Alafors<br></br>44951 Sweden
+            </SmallText>
+            <MapsLink to="https://www.google.com/maps/place/Solg%C3%A5rden+21,+449+51+Alafors/@57.9252763,12.0966777,17z/data=!3m1!4b1!4m6!3m5!1s0x46455c536d313741:0x69500b778a623863!8m2!3d57.9252763!4d12.0992526!16s%2Fg%2F11v15scn9p?entry=ttu">
+              Get Directions &gt;
+            </MapsLink>
           </Info>
         </GridDiv>
         <NavDiv>
           <LinksList>
             <NavLink to="/our-rooms">Our Rooms</NavLink>
-            <NavLink to="/yoga">Yoga</NavLink>
+            <NavLink to="/yoga"> Yoga</NavLink>
             <NavLink to="/contact">Connect With Us</NavLink>
             <NavLink to="/inspirational-quotes">Inspirational Quotes</NavLink>
           </LinksList>

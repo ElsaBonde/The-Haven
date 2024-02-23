@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import greenPhone from "./assets/greenphone.png";
-import greenYoga from "./assets/greenyoga.png";
-import hamburgerMenu from "./assets/hamburgermenu.png";
 
 const Head = styled.header`
   display: flex;
@@ -61,22 +58,25 @@ const HamburgerMenu = styled.div<{ backgroundImage: string }>`
 `;
 
 export default function Header() {
+  /* isOpen state */
+
   return (
     <Head>
       <Name to="/">The Haven</Name>
       <Navbar>
         <LinkNav to="yoga">
-          <ImgNav backgroundImage={greenYoga} />
+          <span className="material-symbols-outlined">self_improvement</span>
           Yoga
         </LinkNav>
         <LinkNav to="contact">
-          <ImgNav backgroundImage={greenPhone} />
+          <span className="material-symbols-outlined">call</span>
           Contact
         </LinkNav>
-        <LinkNav to="menu">
-          <HamburgerMenu backgroundImage={hamburgerMenu} />
-        </LinkNav>
+        <LinkNav to="menu"><span className="material-symbols-outlined">
+menu
+</span></LinkNav>
       </Navbar>
+      {/* SIDEBAR isOpen={isOpen} onClose={() => setIsOpen(false)} */}
     </Head>
   );
 }
