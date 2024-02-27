@@ -98,14 +98,17 @@ const BookingButton = styled.button`
 `;
 
 export default function OurRooms() {
+  // skapar ett state för att hålla koll på vilken slide som visas
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // funktion för att gå till nästa slide
   const nextSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide === mockedRoom.length - 1 ? 0 : prevSlide + 1
     );
   };
 
+  // funktion för att gå till föregående slide
   const prevSlide = () => {
     setCurrentSlide((prevSlide) =>
       prevSlide === 0 ? mockedRoom.length - 1 : prevSlide - 1
@@ -117,9 +120,11 @@ export default function OurRooms() {
       <PhotoDiv>
         <PrevNextButton onClick={prevSlide}>&lt;</PrevNextButton>
         <CarouselContainer>
+          {/*lägger till style för att flytta bilderna*/}
           <ImageOfRooms
             style={{ transform: `translateX(-${currentSlide * 100}%)`}}
           >
+            {/* loopar igenom mockedRoom och skapar en img för varje rum */}
             {mockedRoom.map((room) => (
               <Image key={room.id} src={room.image} alt={room.title} />
             ))}
@@ -132,6 +137,7 @@ export default function OurRooms() {
       <TextDiv>
         <SiteTitle>Rooms</SiteTitle>
         <SubTitle>Discover our hospitality</SubTitle>
+        {/*hämtar data från mockedRoom och visar den (titeln på rummen som länkar till respektive rumssida)*/}
         {mockedRoom.map((room) => (
           <StyledLink key={room.title} to={"/our-rooms/" + room.id}>
             {room.title}

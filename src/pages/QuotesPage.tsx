@@ -83,25 +83,32 @@ const Button = styled.button`
 `;
 
 export default function QuotesPage() {
+  
+/*state för att hålla koll på quote och author i aktuellt citat*/
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
 
+/*useEffect används för att fetcha en quote från API:et när sidan laddas*/
   useEffect(() => {
     fetchQuote();
   }, []);
 
+/*funktionen som fetchar en quote från API:et*/
   const fetchQuote = () => {
     fetch("https://api.quotable.io/random")
+    /*om det inte går att hämta datan, skrivs ett felmeddelande ut annars visa det*/
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed networks issue. Please try again later.");
         }
         return response.json();
       })
+      /*sätter quote och author till datan som hämtats*/
       .then((data) => {
         setQuote(data.content);
         setAuthor(data.author);
       })
+      /*om det blir fel vid fetch, skrivs felmeddelande ut i konsolen*/
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
       });

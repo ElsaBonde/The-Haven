@@ -55,14 +55,17 @@ background-image: url(${props => props.isFilled ? FilledHeart : OutlineHeart});
   
 `;
 
+//typ för props till Heart
 type HeartProps = {
   isFilled: boolean;
   onClick: () => void;
 };
 
 export default function MessageReceived() {
+  //state för att hålla koll på om hjärtat är klickat
   const [isLiked, setIsLiked] = useState(false);
 
+  //funktion för att ändra state när hjärtat klickas filled till inte filled och tvärtom
   const handleLikeClick = () => {
     setIsLiked(!isLiked);
   };

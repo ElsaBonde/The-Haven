@@ -121,8 +121,10 @@ const OuterDiv = styled.div`
 `;
 
 export default function StartPage() {
+  //skapar state för att hålla koll på om sidomenyn är öppen eller stängd
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  //funktion som ändrar state för att öppna/stänga sidomenyn
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -145,6 +147,7 @@ export default function StartPage() {
             <span className="material-symbols-outlined">call</span>
             Contact
           </LinkNav>
+          {/* när användaren klickar på menyikonen så anropas funktionen som gör att state för isMenuOpen ändras och sidomenyn visas */}
           <LinkNav to="#" onClick={toggleMenu}>
             <span className="material-symbols-outlined">menu</span>
           </LinkNav>

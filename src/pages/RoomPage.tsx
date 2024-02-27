@@ -63,10 +63,12 @@ const RoomImage = styled.img`
 `;
 
 export default function RoomPage() {
-  
+  //hämtar id från url
   const params = useParams();
+  //hittar rummet som matchar id
   const room = mockedRoom.find((room) => room.id === params.id);
 
+  //om rummet inte finns så visa en h1 med texten "This room does not longer exist."
   if (!room) {
     return (
       <div>
@@ -75,18 +77,20 @@ export default function RoomPage() {
     );
   }
 
-  //gör om <br> till ett mellanslag då html och js har olika syntax
+  //gör om <br> taggar till \n för att kunna visa texten på flera rader
   const descriptionWithSpaces = room.description.replace(/<br\s*\/?>/gi, "\n");
 
   return (
     <>
       <TextDiv>
+        {/* hämta data från room baserat på id och visa det */}
       <SiteTitle>{room.title}</SiteTitle>
       <SubTitle>{room.subtitle}</SubTitle>
       <Text>{descriptionWithSpaces}</Text>
       <ReserveButton>Make reservation</ReserveButton>
       </TextDiv>
       <PhotoDiv>
+        {/* map:ar igenom mockedRoom och hittar rummet som matchar id:et för att visa rätt bild */}
       {mockedRoom.map((room) => {
         if (room.id === params.id) {
           return (

@@ -68,13 +68,16 @@ const ErrorMessage = styled.p`
   color: #ce0e0e;
 `;
 
+//typ för props till onMessageSent
 type onMessageSent = () => void;
 
+//interface för props
 interface MessageFormProps {
   onMessageSent: onMessageSent;
 } 
 
 export default function MessageForm({onMessageSent}: MessageFormProps ) {
+  //zodschema för formuläret med felmeddelandet där det behövs
   const MessageSchema = z.object({
     name: z.string(),
     surname: z.string(),
@@ -88,14 +91,16 @@ export default function MessageForm({onMessageSent}: MessageFormProps ) {
       .max(300, { message: "Oops! Your message can't exceed 300 characters." }),
   });
 
+  //typ för meddelandet
   type Message = z.infer<typeof MessageSchema>;
 
+  //useForm hook för att hantera formuläret, resolver för att använda zodschema
   const form = useForm<Message>({
     resolver: zodResolver(MessageSchema),
   });
 
+  //funktion för att skicka meddelandet som rensar formuläret och anropar onMessageSent
   const sendMessage = () => {
-    console.log("Message Sent");
     form.reset();
     onMessageSent();
   };

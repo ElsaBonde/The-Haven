@@ -2,6 +2,7 @@ import room1Image from "./assets/room1.png";
 import room2Image from "./assets/room2.png";
 import room3Image from "./assets/room3.png";
 
+//skapar mockad data för rummen
 export interface Room {
   id: string;
   image: string;

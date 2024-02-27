@@ -8,7 +8,7 @@ overflow-x: hidden;
 ` 
 const Main = styled.main`
 height: 100%;
-`
+`;
 
 const BackgroundDiv = styled.div`
   background: #efdccc;

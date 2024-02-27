@@ -64,7 +64,6 @@ export default function YogaPage() {
   return (
     <>
       <PhotoDiv>
-        {" "}
         <Image src={yogaImage} alt={"One of our yoga classes"} />
       </PhotoDiv>
       <TextDiv>

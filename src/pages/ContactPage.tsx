@@ -34,8 +34,10 @@ const Line = styled.div`
 `;
 
 export default function ContactPage() {
+  //state för att visa messageSent eller MessageForm
   const [messageSent, setMessageSent] = useState(false);
 
+  //funktion som sätter messageSent till true och därmed visar MessageSuccess
   const handleMessageSent = () => {
     setMessageSent(true);
   };
@@ -61,6 +63,7 @@ export default function ContactPage() {
         </SmallText>
       </TextDiv>
       <Line></Line>
+      {/* om messageSent är true visas MessageSuccess, annars MessageForm */}
       {messageSent ? (
         <MessageSuccess />
       ) : (

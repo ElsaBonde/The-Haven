@@ -152,11 +152,13 @@ const NavLink = styled(Link)`
   }
 `;
 
+// interface för att skicka in props till komponenten
 interface SideMenuProps {
   isOpen: boolean;
   toggleMenu: () => void;
 }
 
+//komponenten för sidomenyn som visas när användaren klickar på menyn (dom tre strecken, hamburgare)
 const SideMenu = ({ isOpen, toggleMenu }: SideMenuProps) => {
   return (
     <SideMenuContainer isOpen={isOpen}>
@@ -187,6 +189,7 @@ const SideMenu = ({ isOpen, toggleMenu }: SideMenuProps) => {
             <SmallText>
               Solgården 21, Alafors<br></br>44951 Sweden
             </SmallText>
+            {/* googlemaps länk till platsen (min adress så länge som exempel) */}
             <MapsLink to="https://www.google.com/maps/place/Solg%C3%A5rden+21,+449+51+Alafors/@57.9252763,12.0966777,17z/data=!3m1!4b1!4m6!3m5!1s0x46455c536d313741:0x69500b778a623863!8m2!3d57.9252763!4d12.0992526!16s%2Fg%2F11v15scn9p?entry=ttu">
               Get Directions &gt;
             </MapsLink>
