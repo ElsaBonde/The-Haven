@@ -46,7 +46,6 @@ const LinkNav = styled(Link)`
 `;
 
 export default function Header() {
-  /* isOpen state */
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -70,7 +69,6 @@ export default function Header() {
         </LinkNav>
       </Navbar>
       <SideMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-      {/* SIDEBAR isOpen={isOpen} onClose={() => setIsOpen(false)} */}
     </Head>
   );
 }

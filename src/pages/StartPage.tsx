@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import hotelRoom from "../assets/hotelroom.jpg";
 import BackgroundImage from "../assets/maybebackground.jpg";
+import SideMenu from "../SideMenu";
 
 const Head = styled.header`
   display: flex;
@@ -114,12 +116,17 @@ const Main = styled.main`
 
 const OuterDiv = styled.div`
   min-height: 100vh;
-  overflow-x: hidden;
   background-image: url(${BackgroundImage});
   background-size: cover;
 `;
 
 export default function StartPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <OuterDiv>
       <Head>
@@ -138,10 +145,11 @@ export default function StartPage() {
             <span className="material-symbols-outlined">call</span>
             Contact
           </LinkNav>
-          <LinkNav to="menu">
+          <LinkNav to="#" onClick={toggleMenu}>
             <span className="material-symbols-outlined">menu</span>
           </LinkNav>
         </Navbar>
+        <SideMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </Head>
       <Main>
         <FirstPageImg backgroundImage={hotelRoom}></FirstPageImg>
