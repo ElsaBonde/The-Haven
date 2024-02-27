@@ -16,9 +16,10 @@ const ParentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; 
   gap: 25px;
-  padding-top: 80px;
-  height: 89%;
+  padding: 0px;
+  height: 100%;
   width: 55%;
 `;
 

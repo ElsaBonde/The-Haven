@@ -107,8 +107,12 @@ const ButtonForRooms = styled(Link)`
 `;
 
 const Main = styled.main`
+position: absolute;
+top: 110px;
+left: 0;
+right: 0;
+bottom: 0;
   display: grid;
-  min-height: 80vh;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
   margin-top: 40px;

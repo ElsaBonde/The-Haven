@@ -1,7 +1,6 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SideMenu from "./SideMenu";
 
 const Head = styled.header`
   display: flex;
@@ -45,13 +44,13 @@ const LinkNav = styled(Link)`
   }
 `;
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+//interface som definerar vad som ska skickas in i Header
+interface HeaderProps {
+  toggleMenu: () => void;
+}
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+//header-komponenten som skapar en header med en länk till startsidan och en navbar med länkar till yoga och contact samt anrop till toggleMenu
+export default function Header({toggleMenu}: HeaderProps) {
   return (
     <Head>
       <Name to="/">The Haven</Name>
@@ -68,7 +67,6 @@ export default function Header() {
           <span className="material-symbols-outlined">menu</span>
         </LinkNav>
       </Navbar>
-      <SideMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </Head>
   );
 }
