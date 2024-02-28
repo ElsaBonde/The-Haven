@@ -23,7 +23,7 @@ Visitors can find inspiration and upliftment on the Inspirational Quotes page. P
 Enhance navigation and user experience with the interactive sidebar. Seamlessly integrated into The Haven website, the sidebar slides in to provide convenient access to essential pages and features. Whether exploring rooms, diving into yoga, or getting in touch, users can effortlessly navigate through The Haven's offerings.
 
 ## Shortcut to application
->**_The Haven_** (HÄR SKA LÄNKEN IN)
+>**_The Haven_** https://the-haven.vercel.app/
 
 ## Installation and getting started with the project
 To begin, clone the repository to your computer, open the folder in your IDE and run the command `npm install` to install all the required modules. 
