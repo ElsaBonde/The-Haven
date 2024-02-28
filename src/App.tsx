@@ -18,12 +18,15 @@ const Main = styled.main`
 `;
 
 const BackgroundDiv = styled.div`
-  background: #efdccc;
   display: flex;
   font-family: "Ledger";
   color: #183717;
   height: 100%;
-`;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+  `;
 
 function App() {
   //state för att hålla koll på om menyn är öppen eller stängd

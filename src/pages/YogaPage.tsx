@@ -7,6 +7,10 @@ const PhotoDiv = styled.div`
   justify-content: center;
   align-items: center;
   margin: 80px 0px;
+
+  @media (max-width: 600px) {
+    margin: 10px;
+  }
 `;
 
 const Image = styled.img`
@@ -21,22 +25,38 @@ const TextDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    margin: 10px;
+  }
 `;
 
 const SiteTitle = styled.p`
   font-size: 25px;
   margin: 0px;
+
+  @media (max-width: 600px) {
+    font-size: 21px;
+  }
 `;
 
 const SubTitle = styled.p`
   font-size: 40px;
   margin: 10px 0px;
+
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `;
 
 const Text = styled.p`
   font-size: 17px;
   margin: 10px 0px;
   margin-right: 25%;
+
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `;
 
 const BookingButton = styled.button`
@@ -57,6 +77,11 @@ const BookingButton = styled.button`
     background-color: #6a8e68;
     color: white;
     transition: color 1.5s ease;
+  }
+
+  @media (max-width: 600px) {
+    width: 40%;
+    align-self: center;
   }
 `;
 

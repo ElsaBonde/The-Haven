@@ -7,8 +7,8 @@ const BackgroundDiv = styled.div`
   background-size: cover;
   width: 100%;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 `;
 
 const ParentContainer = styled.div`
@@ -16,19 +16,31 @@ const ParentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   gap: 25px;
   padding: 0px;
   height: 100%;
   width: 55%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const TextDiv = styled.div`
-padding: 0px 35px;
+  padding: 0px 35px;
+
+  @media (max-width: 600px) {
+    padding: 0px 10px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 25px;
+
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 `;
 
 const Text = styled.p`
@@ -58,7 +70,7 @@ const Quote = styled.p`
 
 const Author = styled.p`
   margin: 0px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   font-size: 14px;
 `;
 
@@ -81,23 +93,26 @@ const Button = styled.button`
     color: white;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    width: 70%;
+  }
 `;
 
 export default function QuotesPage() {
-  
-/*state för att hålla koll på quote och author i aktuellt citat*/
+  /*state för att hålla koll på quote och author i aktuellt citat*/
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
 
-/*useEffect används för att fetcha en quote från API:et när sidan laddas*/
+  /*useEffect används för att fetcha en quote från API:et när sidan laddas*/
   useEffect(() => {
     fetchQuote();
   }, []);
 
-/*funktionen som fetchar en quote från API:et*/
+  /*funktionen som fetchar en quote från API:et*/
   const fetchQuote = () => {
     fetch("https://api.quotable.io/random")
-    /*om det inte går att hämta datan, skrivs ett felmeddelande ut annars visa det*/
+      /*om det inte går att hämta datan, skrivs ett felmeddelande ut annars visa det*/
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed networks issue. Please try again later.");

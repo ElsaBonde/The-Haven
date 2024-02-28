@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -13,6 +12,10 @@ const Head = styled.header`
   padding: 20px 30px;
   position: sticky;
   top: 0;
+
+  @media (max-width: 600px) {
+    padding: 25px 15px;
+  }
 `;
 
 const Name = styled(Link)`
@@ -42,6 +45,24 @@ const LinkNav = styled(Link)`
     color: #c59267;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const LinkNavMenu = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #183717;
+
+  &:hover {
+    color: #c59267;
+    transition: color 1.5s ease;
+  }
 `;
 
 //interface som definerar vad som ska skickas in i Header
@@ -50,7 +71,7 @@ interface HeaderProps {
 }
 
 //header-komponenten som skapar en header med en länk till startsidan och en navbar med länkar till yoga och contact samt anrop till toggleMenu
-export default function Header({toggleMenu}: HeaderProps) {
+export default function Header({ toggleMenu }: HeaderProps) {
   return (
     <Head>
       <Name to="/">The Haven</Name>
@@ -63,9 +84,9 @@ export default function Header({toggleMenu}: HeaderProps) {
           <span className="material-symbols-outlined">call</span>
           Contact
         </LinkNav>
-        <LinkNav to="#" onClick={toggleMenu}>
+        <LinkNavMenu to="#" onClick={toggleMenu}>
           <span className="material-symbols-outlined">menu</span>
-        </LinkNav>
+        </LinkNavMenu>
       </Navbar>
     </Head>
   );

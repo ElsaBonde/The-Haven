@@ -41,11 +41,19 @@ const Name = styled.h1`
   text-align: center;
   margin-bottom: 7px;
   font-weight: 400;
+
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 `;
 const SubName = styled.p`
   font-size: 11px;
   letter-spacing: 1px;
   margin: 0px;
+
+  @media (max-width: 600px) {
+    font-size: 8px;
+  }
 `;
 
 const Navbar = styled.div`
@@ -67,6 +75,10 @@ const LinkNav = styled(Link)`
     color: #c59267;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Main = styled.main`
@@ -86,6 +98,10 @@ const GridDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Info = styled.div`
@@ -129,6 +145,10 @@ const NavDiv = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #183717;
+
+  @media (max-width: 600px) {
+    flex-basis: 100%;
+  }
 `;
 
 const LinksList = styled.div`
@@ -147,6 +167,20 @@ const NavLink = styled(Link)`
 
   &:hover {
     transform: translateX(10px);
+    color: #c59267;
+    transition: color 1.5s ease;
+  }
+`;
+
+const LinkNavMenu = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
     color: #c59267;
     transition: color 1.5s ease;
   }
@@ -177,9 +211,9 @@ const SideMenu = ({ isOpen, toggleMenu }: SideMenuProps) => {
           <LinkNav to="/contact" onClick={toggleMenu}>
             <span className="material-symbols-outlined">call</span>Contact
           </LinkNav>
-          <LinkNav to="#" onClick={toggleMenu}>
+          <LinkNavMenu to="#" onClick={toggleMenu}>
             <span className="material-symbols-outlined">close</span>
-          </LinkNav>
+          </LinkNavMenu>
         </Navbar>
       </Head>
       <Main>

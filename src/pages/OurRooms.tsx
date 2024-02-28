@@ -8,6 +8,10 @@ const PhotoDiv = styled.div`
   display: flex;
   align-items: center;
   margin: 0px 30px;
+
+  @media (max-width: 600px) {
+    margin: 10px 0px;
+  }
 `;
 
 const PrevNextButton = styled.button`
@@ -46,16 +50,28 @@ const TextDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    margin: 5px 10px;
+  }
 `;
 
 const SiteTitle = styled.p`
   font-size: 25px;
   margin: 0px;
+
+  @media (max-width: 600px) {
+    font-size: 21px;
+  }
 `;
 
 const SubTitle = styled.p`
   font-size: 40px;
   margin: 20px 0px;
+
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -73,6 +89,11 @@ const StyledLink = styled(Link)`
     color: #6a8e68;
     border-bottom: 1px solid #6a8e68;
     transition: color 0.9s ease;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+    width: 80%;
   }
 `;
 
@@ -94,6 +115,12 @@ const BookingButton = styled.button`
     background-color: #6a8e68;
     color: white;
     transition: color 1.5s ease;
+  }
+
+  @media (max-width: 600px) {
+    align-self: center;
+    width: 40%;
+    margin-top: 5px;
   }
 `;
 
@@ -122,7 +149,7 @@ export default function OurRooms() {
         <CarouselContainer>
           {/*lägger till style för att flytta bilderna*/}
           <ImageOfRooms
-            style={{ transform: `translateX(-${currentSlide * 100}%)`}}
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {/* loopar igenom mockedRoom och skapar en img för varje rum */}
             {mockedRoom.map((room) => (

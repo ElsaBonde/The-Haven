@@ -10,12 +10,22 @@ const FormDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    margin: 0px;
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin-right: 80px;
+
+  @media (max-width: 600px) {
+    margin: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #183717;
+  }
 `;
 
 const Label = styled.label`
@@ -59,6 +69,11 @@ const SendButton = styled.button`
     color: white;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    width: 40%;
+    align-self: center;
+  }
 `;
 
 const ErrorMessage = styled.p`
@@ -74,9 +89,9 @@ type onMessageSent = () => void;
 //interface för props
 interface MessageFormProps {
   onMessageSent: onMessageSent;
-} 
+}
 
-export default function MessageForm({onMessageSent}: MessageFormProps ) {
+export default function MessageForm({ onMessageSent }: MessageFormProps) {
   //zodschema för formuläret med felmeddelandet där det behövs
   const MessageSchema = z.object({
     name: z.string(),

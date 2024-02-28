@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import SideMenu from "../SideMenu";
 import hotelRoom from "../assets/hotelroom.jpg";
 import BackgroundImage from "../assets/maybebackground.jpg";
-import SideMenu from "../SideMenu";
 
 const Head = styled.header`
   display: flex;
@@ -15,7 +15,9 @@ const Head = styled.header`
   padding: 0px 30px;
 `;
 
-const NameDiv = styled.div`
+const NameDiv = styled(Link)`
+  text-decoration: none;
+  color: white;
   display: flex;
   flex-direction: column;
 `;
@@ -26,11 +28,19 @@ const Name = styled.h1`
   text-align: center;
   margin-bottom: 7px;
   font-weight: 400;
+
+  @media (max-width: 600px) {
+    font-size: 22px;
+  }
 `;
 const SubName = styled.p`
   font-size: 11px;
   letter-spacing: 1px;
   margin: 0px;
+
+  @media (max-width: 600px) {
+    font-size: 8px;
+  }
 `;
 
 const Navbar = styled.div`
@@ -52,6 +62,24 @@ const LinkNav = styled(Link)`
     color: #c59267;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const LinkNavMenu = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 800;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    color: #c59267;
+    transition: color 1.5s ease;
+  }
 `;
 
 const FirstPageImg = styled.div<{ backgroundImage: string }>`
@@ -62,6 +90,12 @@ const FirstPageImg = styled.div<{ backgroundImage: string }>`
   grid-column-end: 10;
   grid-row-start: 1;
   grid-row-end: 6;
+
+  @media (max-width: 600px) {
+    order: 2;
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 const TextBox = styled.h1`
@@ -77,6 +111,24 @@ const TextBox = styled.h1`
   font-family: "Ledger";
   font-weight: 100;
   z-index: 1;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const TextBoxMobile = styled.h1`
+display: none;
+
+@media (max-width: 600px) {
+  font-weight: 100;
+  display: flex;
+  font-size: 25px;
+  color: white;
+  font-family: "Ledger";
+  order 1;
+  align-self: center;
+}
 `;
 
 const ButtonForRooms = styled(Link)`
@@ -104,18 +156,32 @@ const ButtonForRooms = styled(Link)`
     color: #183717;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    align-self: center;
+    height: 50px;
+    width: 50%;
+    order: 3;
+  }
 `;
 
 const Main = styled.main`
-position: absolute;
-top: 110px;
-left: 0;
-right: 0;
-bottom: 0;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);
   margin-top: 40px;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+  }
 `;
 
 const OuterDiv = styled.div`
@@ -136,7 +202,7 @@ export default function StartPage() {
   return (
     <OuterDiv>
       <Head>
-        <NameDiv>
+        <NameDiv to="/">
           <Name>
             The<br></br> Haven
           </Name>
@@ -152,9 +218,9 @@ export default function StartPage() {
             Contact
           </LinkNav>
           {/* när användaren klickar på menyikonen så anropas funktionen som gör att state för isMenuOpen ändras och sidomenyn visas */}
-          <LinkNav to="#" onClick={toggleMenu}>
+          <LinkNavMenu to="#" onClick={toggleMenu}>
             <span className="material-symbols-outlined">menu</span>
-          </LinkNav>
+          </LinkNavMenu>
         </Navbar>
         <SideMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </Head>
@@ -163,6 +229,7 @@ export default function StartPage() {
         <TextBox>
           Discover<br></br>Your<br></br> Sanctury
         </TextBox>
+        <TextBoxMobile>Discover Your Sanctury</TextBoxMobile>
         <ButtonForRooms to="/our-rooms">Our Rooms</ButtonForRooms>
       </Main>
     </OuterDiv>

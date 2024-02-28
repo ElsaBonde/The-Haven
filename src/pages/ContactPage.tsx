@@ -9,11 +9,20 @@ const TextDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-left: 80px;
+
+  @media (max-width: 600px) {
+    margin: 0px;
+    padding: 10px;
+  }
 `;
 
 const SiteTitle = styled.p`
   font-size: 40px;
   margin: 10px 0px;
+
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `;
 
 const SmallText = styled.p`
@@ -24,6 +33,10 @@ const SmallText = styled.p`
 const SecondTitle = styled.p`
   font-size: 25px;
   margin: 18px 0px 10px 0px;
+
+  @media (max-width: 600px) {
+    font-size: 21px;
+  }
 `;
 
 const Line = styled.div`
@@ -31,6 +44,10 @@ const Line = styled.div`
   height: 70%;
   background-color: #183717;
   margin: auto 80px;
+
+  @media (max-width: 600px) {
+   display: none;
+  }
 `;
 
 export default function ContactPage() {

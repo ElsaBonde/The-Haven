@@ -3,21 +3,34 @@ import styled from "styled-components";
 import { mockedRoom } from "../rooms";
 
 const TextDiv = styled.div`
-flex-basis: 45%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin-left: 80px;
+  flex-basis: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 80px;
+
+  @media (max-width: 600px) {
+    margin: 10px;
+    order: 2;
+  }
 `;
 
 const SiteTitle = styled.p`
   font-size: 25px;
   margin: 0px;
+
+  @media (max-width: 600px) {
+    font-size: 21px;
+  }
 `;
 
 const SubTitle = styled.p`
   font-size: 40px;
   margin: 10px 0px;
+
+  @media (max-width: 600px) {
+    font-size: 28px;
+  }
 `;
 
 const Text = styled.p`
@@ -25,6 +38,10 @@ const Text = styled.p`
   margin: 10px 0px;
   margin-right: 20%;
   white-space: pre-line;
+
+  @media (max-width: 600px) {
+    margin: 0px;
+  }
 `;
 
 const ReserveButton = styled.button`
@@ -46,15 +63,26 @@ const ReserveButton = styled.button`
     color: white;
     transition: color 1.5s ease;
   }
+
+  @media (max-width: 600px) {
+    width: 55%;
+    align-self: center;
+  }
 `;
 
 const PhotoDiv = styled.div`
-flex-basis: 65%;
+  flex-basis: 65%;
   flex-grow: 1;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   margin: 80px 0px;
   margin-right: 80px;
+  order: 2;
+
+  @media (max-width: 600px) {
+    margin: 10px;
+    order: 1;
+  }
 `;
 
 const RoomImage = styled.img`
@@ -84,21 +112,21 @@ export default function RoomPage() {
     <>
       <TextDiv>
         {/* hämta data från room baserat på id och visa det */}
-      <SiteTitle>{room.title}</SiteTitle>
-      <SubTitle>{room.subtitle}</SubTitle>
-      <Text>{descriptionWithSpaces}</Text>
-      <ReserveButton>Make reservation</ReserveButton>
+        <SiteTitle>{room.title}</SiteTitle>
+        <SubTitle>{room.subtitle}</SubTitle>
+        <Text>{descriptionWithSpaces}</Text>
+        <ReserveButton>Make reservation</ReserveButton>
       </TextDiv>
       <PhotoDiv>
         {/* map:ar igenom mockedRoom och hittar rummet som matchar id:et för att visa rätt bild */}
-      {mockedRoom.map((room) => {
-        if (room.id === params.id) {
-          return (
-            <RoomImage key={room.id} src={room.image} alt={room.title} />
-          );
-        }
-        return null;
-      })}
+        {mockedRoom.map((room) => {
+          if (room.id === params.id) {
+            return (
+              <RoomImage key={room.id} src={room.image} alt={room.title} />
+            );
+          }
+          return null;
+        })}
       </PhotoDiv>
     </>
   );
