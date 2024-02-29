@@ -124,7 +124,7 @@ export default function QuotesPage() {
         setQuote(data.content);
         setAuthor(data.author);
       })
-      /*om det blir fel vid fetch, skrivs felmeddelande ut i konsolen*/
+      /*om det blir fel vid fetch, skrivs felmeddelande och felet ut i konsolen*/
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
       });
