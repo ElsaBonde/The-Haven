@@ -26,7 +26,7 @@ const OuterDiv = styled.div`
   }
 `;
 
-const Title = styled.p`
+const Title = styled.h1`
   font-size: 25px;
   margin: 35px auto 10px;
   padding-left: 35px;
