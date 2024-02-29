@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import {Button} from "../StyledElements";
 import PalmLeaves from "../assets/palmleaves.jpg";
 
 const BackgroundDiv = styled.div`
@@ -74,29 +75,10 @@ const Author = styled.p`
   font-size: 14px;
 `;
 
-const Button = styled.button`
-  font-family: "Karla", sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 900;
-  color: #183717;
+const GenerateButton = styled(Button)`
   margin: 0px;
-  background: inherit;
-  border-radius: 5px;
   padding: 15px;
-  border: 1px solid #183717;
   width: 35%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #6a8e68;
-    color: white;
-    transition: color 1.5s ease;
-  }
-
-  @media (max-width: 600px) {
-    width: 70%;
-  }
 `;
 
 export default function QuotesPage() {
@@ -155,7 +137,7 @@ export default function QuotesPage() {
           <Quote>"{quote}"</Quote>
           <Author>- {author}</Author>
         </QuotesDiv>
-        <Button onClick={handleNewQuote}>Generate another quote</Button>
+        <GenerateButton onClick={handleNewQuote}>Generate another quote</GenerateButton>
       </ParentContainer>
     </BackgroundDiv>
   );

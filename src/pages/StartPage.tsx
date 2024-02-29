@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { LinkNav, LinkNavMenu, NameDiv } from "../StyledElements";
 import SideMenu from "../SideMenu";
 import hotelRoom from "../assets/hotelroom.jpg";
 import BackgroundImage from "../assets/maybebackground.jpg";
@@ -13,13 +14,6 @@ const Head = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
-`;
-
-const NameDiv = styled(Link)`
-  text-decoration: none;
-  color: white;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Name = styled.h1`
@@ -50,38 +44,6 @@ const Navbar = styled.div`
   gap: 35px;
 `;
 
-const LinkNav = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
-
-  &:hover {
-    color: #c59267;
-    transition: color 1.5s ease;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
-const LinkNavMenu = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-weight: 800;
-  text-decoration: none;
-  color: white;
-
-  &:hover {
-    color: #c59267;
-    transition: color 1.5s ease;
-  }
-`;
-
 const FirstPageImg = styled.div<{ backgroundImage: string }>`
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
@@ -110,7 +72,6 @@ const TextBox = styled.h1`
   color: white;
   font-family: "Ledger";
   font-weight: 100;
-  z-index: 1;
 
   @media (max-width: 600px) {
     display: none;
@@ -142,7 +103,6 @@ const ButtonForRooms = styled(Link)`
   font-size: 15px;
   color: white;
   font-weight: 700;
-  z-index: 1;
   margin: 15px 45px;
   background-color: transparent;
   border: 2px solid white;

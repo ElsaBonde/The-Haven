@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { Button, SiteTitle, SubTitle } from "../StyledElements";
 import { mockedRoom } from "../rooms";
 
 const TextDiv = styled.div`
@@ -15,24 +16,6 @@ const TextDiv = styled.div`
   }
 `;
 
-const SiteTitle = styled.p`
-  font-size: 25px;
-  margin: 0px;
-
-  @media (max-width: 600px) {
-    font-size: 21px;
-  }
-`;
-
-const SubTitle = styled.p`
-  font-size: 40px;
-  margin: 10px 0px;
-
-  @media (max-width: 600px) {
-    font-size: 28px;
-  }
-`;
-
 const Text = styled.p`
   font-size: 17px;
   margin: 10px 0px;
@@ -44,25 +27,10 @@ const Text = styled.p`
   }
 `;
 
-const ReserveButton = styled.button`
-  font-family: "Karla", sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 900;
-  color: #183717;
+const ReserveButton = styled(Button)`
   margin-top: 25px;
-  background: inherit;
-  border-radius: 5px;
   padding: 15px;
-  border: 1px solid #183717;
   width: 36%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #6a8e68;
-    color: white;
-    transition: color 1.5s ease;
-  }
 
   @media (max-width: 600px) {
     width: 55%;

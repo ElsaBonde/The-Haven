@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { z } from "zod";
+import { Button } from "../StyledElements";
 
 const FormDiv = styled.div`
   flex-basis: 50%;
@@ -50,25 +51,11 @@ const MessageArea = styled.textarea`
   color: #183717;
 `;
 
-const SendButton = styled.button`
-  font-family: "Karla", sans-serif;
-  text-transform: uppercase;
+const SendButton = styled(Button)`
   font-size: 12px;
-  font-weight: 900;
-  color: #183717;
   margin-top: 25px;
-  background: inherit;
-  border-radius: 5px;
   padding: 15px;
-  border: 1px solid #183717;
   width: 25%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #6a8e68;
-    color: white;
-    transition: color 1.5s ease;
-  }
 
   @media (max-width: 600px) {
     width: 40%;

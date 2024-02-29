@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { LinkNav, LinkNavMenu } from "./StyledElements";
 
 const Head = styled.header`
   display: flex;
@@ -33,36 +34,13 @@ const Navbar = styled.div`
   gap: 35px;
 `;
 
-const LinkNav = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-weight: 800;
-  text-decoration: none;
+const LinkNavigationMenu = styled(LinkNavMenu)`
   color: #183717;
-
-  &:hover {
-    color: #c59267;
-    transition: color 1.5s ease;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
 `;
 
-const LinkNavMenu = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 7px;
+const LinkNavigation = styled(LinkNav)`
   font-weight: 800;
-  text-decoration: none;
   color: #183717;
-
-  &:hover {
-    color: #c59267;
-    transition: color 1.5s ease;
-  }
 `;
 
 //interface som definerar vad som ska skickas in i Header
@@ -76,17 +54,17 @@ export default function Header({ toggleMenu }: HeaderProps) {
     <Head>
       <Name to="/">The Haven</Name>
       <Navbar>
-        <LinkNav to="yoga">
+        <LinkNavigation to="yoga">
           <span className="material-symbols-outlined">self_improvement</span>
           Yoga
-        </LinkNav>
-        <LinkNav to="contact">
+        </LinkNavigation>
+        <LinkNavigation to="contact">
           <span className="material-symbols-outlined">call</span>
           Contact
-        </LinkNav>
-        <LinkNavMenu to="#" onClick={toggleMenu}>
+        </LinkNavigation>
+        <LinkNavigationMenu to="#" onClick={toggleMenu}>
           <span className="material-symbols-outlined">menu</span>
-        </LinkNavMenu>
+        </LinkNavigationMenu>
       </Navbar>
     </Head>
   );

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LinkNav, LinkNavMenu, NameDiv } from "./StyledElements";
 import styled from "styled-components";
 import SideImage from "./assets/waterfall.jpg";
 
@@ -26,13 +27,6 @@ const Head = styled.header`
   align-items: center;
   padding: 0px 30px;
   z-index: 2;
-`;
-
-const NameDiv = styled(Link)`
-  text-decoration: none;
-  color: white;
-  display: flex;
-  flex-direction: column;
 `;
 
 const Name = styled.h1`
@@ -63,30 +57,11 @@ const Navbar = styled.div`
   gap: 35px;
 `;
 
-const LinkNav = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
-
-  &:hover {
-    color: #c59267;
-    transition: color 1.5s ease;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
 const Main = styled.main`
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: row;
-  z-index: 1;
 `;
 
 const GridDiv = styled.div`
@@ -167,20 +142,6 @@ const NavLink = styled(Link)`
 
   &:hover {
     transform: translateX(10px);
-    color: #c59267;
-    transition: color 1.5s ease;
-  }
-`;
-
-const LinkNavMenu = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-weight: 800;
-  text-decoration: none;
-  color: white;
-
-  &:hover {
     color: #c59267;
     transition: color 1.5s ease;
   }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SiteTitle, SubTitle, Button } from "../StyledElements";
 import yogaImage from "../assets/yoga.jpg";
 
 const PhotoDiv = styled.div`
@@ -31,24 +32,6 @@ const TextDiv = styled.div`
   }
 `;
 
-const SiteTitle = styled.p`
-  font-size: 25px;
-  margin: 0px;
-
-  @media (max-width: 600px) {
-    font-size: 21px;
-  }
-`;
-
-const SubTitle = styled.p`
-  font-size: 40px;
-  margin: 10px 0px;
-
-  @media (max-width: 600px) {
-    font-size: 28px;
-  }
-`;
-
 const Text = styled.p`
   font-size: 17px;
   margin: 10px 0px;
@@ -59,25 +42,9 @@ const Text = styled.p`
   }
 `;
 
-const BookingButton = styled.button`
-  font-family: "Karla", sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 900;
-  color: #183717;
+const BookingButton = styled(Button)`
   margin-top: 25px;
-  background: inherit;
-  border-radius: 5px;
-  padding: 15px;
-  border: 1px solid #183717;
   width: 23%;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #6a8e68;
-    color: white;
-    transition: color 1.5s ease;
-  }
 
   @media (max-width: 600px) {
     width: 40%;
