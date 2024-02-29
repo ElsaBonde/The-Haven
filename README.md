@@ -19,7 +19,10 @@ Connect with The Haven (imaginary) team through the Contact page. Here, visitors
 ### 5. Inspirational Quotes
 Visitors can find inspiration and upliftment on the Inspirational Quotes page. Powered by the https://api.quotable.io/random API, visitors can discover thought-provoking quotes. With the option to fetch a new quote at any time, users can pick and choose wich ones they like.
 
-### 6. Interactive Sidebar
+### 6. Reviews
+Explore the thoughts of previous guests at The Haven. Our review section features ratings, messages, and names from past visitors, providing insights for future guests. Visitors can see what others have experienced to help them make their decision.
+
+### 7. Interactive Sidebar
 Enhance navigation and user experience with the interactive sidebar. Seamlessly integrated into The Haven website, the sidebar slides in to provide convenient access to essential pages and features. Whether exploring rooms, diving into yoga, or getting in touch, users can effortlessly navigate through The Haven's offerings.
 
 ## Shortcut to application
@@ -34,6 +37,7 @@ To launch the game, execute `npm run dev`, then open your web browser and naviga
 The website is built using Vite, React and TypeScript. All images are created using gencraft (https://gencraft.com/). The user interface design was originally created in Figma.
 
 ## Kravlista (för David)
+### Krav för godkänt
 [x] Projektet innehåller och använder minst 6 stycken komponenter varav minst 2 stycken är “statefulla"-komponenter.
 
 [x] React Router har använts för att dynamiskt uppdatera URL’en.
@@ -46,7 +50,7 @@ The website is built using Vite, React and TypeScript. All images are created us
 
 [ ] Muntlig presentation är genomförd
 
-# Krav för väl godkänt:
+### Krav för väl godkänt:
 [ ] Alla punkter för godkänt är uppfyllda
 
 [x] Ett “CSS i JS“ lib skall användas för att skriva CSS.
