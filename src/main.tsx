@@ -10,6 +10,7 @@ import App from "./App";
 import ContactPage from "./pages/ContactPage.tsx";
 import OurRooms from "./pages/OurRooms.tsx";
 import QuotesPage from "./pages/QuotesPage.tsx";
+import ReviewsPage from "./pages/ReviewsPage.tsx";
 import RoomPage from "./pages/RoomPage.tsx";
 import Homepage from "./pages/StartPage.tsx";
 import YogaPage from "./pages/YogaPage.tsx";
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         <Route path="yoga" Component={YogaPage} />
         <Route path="contact" index Component={ContactPage} />
         <Route path="inspirational-quotes" Component={QuotesPage} />
+        <Route path="reviews" Component={ReviewsPage} />
         <Route path="*" element={<span>Sidan finns inte..</span>} />
       </Route>
     </Route>

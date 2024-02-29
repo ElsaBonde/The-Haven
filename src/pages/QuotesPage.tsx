@@ -79,6 +79,10 @@ const GenerateButton = styled(Button)`
   margin: 0px;
   padding: 15px;
   width: 35%;
+
+  @media (max-width: 600px) {
+    width: 60%;
+  }
 `;
 
 export default function QuotesPage() {

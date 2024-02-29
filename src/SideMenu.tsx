@@ -196,6 +196,7 @@ const SideMenu = ({ isOpen, toggleMenu }: SideMenuProps) => {
             <NavLink to="/yoga" onClick={toggleMenu}> Yoga</NavLink>
             <NavLink to="/contact" onClick={toggleMenu}>Connect With Us</NavLink>
             <NavLink to="/inspirational-quotes" onClick={toggleMenu}>Inspirational Quotes</NavLink>
+            <NavLink to="/reviews" onClick={toggleMenu}>Reviews</NavLink>
           </LinksList>
         </NavDiv>
       </Main>

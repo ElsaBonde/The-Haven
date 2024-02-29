@@ -10,7 +10,7 @@ const OuterDiv = styled.div`
 `;
 const Main = styled.main`
   position: absolute;
-  top: 80px;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
