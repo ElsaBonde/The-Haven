@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { mockedRoom } from "../MockedRooms";
 import { Button, SiteTitle } from "../StyledElements";
-import { mockedRoom } from "../rooms";
 
 const PhotoDiv = styled.div`
   flex-basis: 45%;

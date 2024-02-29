@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Leaves from "../assets/leaves.jpg";
-import { mockedReview } from "../reviews";
+import { mockedReview } from "../MockedReviews";
 
 const BackgroundDiv = styled.div`
   background-image: url(${Leaves});

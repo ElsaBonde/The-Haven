@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { mockedRoom } from "../MockedRooms";
 import { Button, SiteTitle, SubTitle } from "../StyledElements";
-import { mockedRoom } from "../rooms";
 
 const TextDiv = styled.div`
   flex-basis: 45%;
