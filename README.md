@@ -32,3 +32,23 @@ To launch the game, execute `npm run dev`, then open your web browser and naviga
 
 ## Tools used to write application
 The website is built using Vite, React and TypeScript. All images are created using gencraft (https://gencraft.com/). The user interface design was originally created in Figma.
+
+## Kravlista (för David)
+[x] Projektet innehåller och använder minst 6 stycken komponenter varav minst 2 stycken är “statefulla"-komponenter.
+
+[x] React Router har använts för att dynamiskt uppdatera URL’en.
+
+[x] Git & GitHub har använts
+
+[x] Projektmappen innehåller en README.md fil 
+
+[ ] Uppgiften lämnas in i tid!
+
+[ ] Muntlig presentation är genomförd
+
+# Krav för väl godkänt:
+[ ] Alla punkter för godkänt är uppfyllda
+
+[x] Ett “CSS i JS“ lib skall användas för att skriva CSS.
+
+[x] Data från ett web-API hämtas och visas på sidan.
