@@ -10,6 +10,11 @@ const TextDiv = styled.div`
   justify-content: center;
   margin-left: 80px;
 
+  @media (max-width: 1025px) {
+    margin: 0px 40px;
+    align-items: center;
+    order: 2;
+  }
   @media (max-width: 600px) {
     margin: 10px;
     order: 2;
@@ -22,7 +27,7 @@ const Text = styled.p`
   margin-right: 20%;
   white-space: pre-line;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     margin: 0px;
   }
 `;
@@ -32,9 +37,12 @@ const ReserveButton = styled(Button)`
   padding: 15px;
   width: 36%;
 
-  @media (max-width: 600px) {
-    width: 55%;
+  @media (max-width: 1025px) {
+    width: 30%;
     align-self: center;
+  }
+  media (max-width: 600px) {
+    width: 55%;
   }
 `;
 
@@ -47,9 +55,12 @@ const PhotoDiv = styled.div`
   margin-right: 80px;
   order: 2;
 
+  @media (max-width: 1025px) {
+    margin: 10px 30px;
+    order: 1;
+  }
   @media (max-width: 600px) {
     margin: 10px;
-    order: 1;
   }
 `;
 

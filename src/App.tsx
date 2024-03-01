@@ -23,10 +23,10 @@ const BackgroundDiv = styled.div`
   color: #183717;
   height: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     flex-direction: column;
   }
-  `;
+`;
 
 function App() {
   //state för att hålla koll på om menyn är öppen eller stängd

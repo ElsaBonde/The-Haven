@@ -9,6 +9,9 @@ const PhotoDiv = styled.div`
   align-items: center;
   margin: 80px 0px;
 
+  @media (max-width: 1025px) {
+    margin: 10px 30px;
+  }
   @media (max-width: 600px) {
     margin: 10px;
   }
@@ -27,6 +30,10 @@ const TextDiv = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  @media (max-width: 1025px) {
+    margin: 0px 40px;
+    align-items: center;
+  }
   @media (max-width: 600px) {
     margin: 10px;
   }
@@ -37,8 +44,8 @@ const Text = styled.p`
   margin: 10px 0px;
   margin-right: 25%;
 
-  @media (max-width: 600px) {
-    margin: 0;
+  @media (max-width: 1025px) {
+    margin: 0px;
   }
 `;
 
@@ -46,9 +53,12 @@ const BookingButton = styled(Button)`
   margin-top: 25px;
   width: 23%;
 
+  @media (max-width: 1025px) {
+    width: 30%;
+    align-self: center;
+  }
   @media (max-width: 600px) {
     width: 40%;
-    align-self: center;
   }
 `;
 

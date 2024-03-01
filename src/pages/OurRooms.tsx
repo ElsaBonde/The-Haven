@@ -10,8 +10,11 @@ const PhotoDiv = styled.div`
   align-items: center;
   margin: 0px 30px;
 
+  @media (max-width: 1025px) {
+    margin: 10px 57px;
+  }
   @media (max-width: 600px) {
-    margin: 10px 0px;
+    margin: 20px 0px;
   }
 `;
 
@@ -51,6 +54,9 @@ const TextDiv = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  @media (max-width: 1025px) {
+    align-items: center;
+  }
   @media (max-width: 600px) {
     margin: 5px 10px;
   }
@@ -60,6 +66,9 @@ const SubTitle = styled.p`
   font-size: 40px;
   margin: 20px 0px;
 
+  @media (max-width: 1025px) {
+    font-size: 35px;
+  }
   @media (max-width: 600px) {
     font-size: 28px;
   }
@@ -82,6 +91,10 @@ const StyledLink = styled(Link)`
     transition: color 0.9s ease;
   }
 
+  @media (max-width: 1025px) {
+    font-size: 25px;
+    width: 80%;
+  }
   @media (max-width: 600px) {
     font-size: 20px;
     width: 80%;
@@ -92,6 +105,11 @@ const BookingButton = styled(Button)`
   margin-top: 25px;
   width: 25%;
 
+  @media (max-width: 1025px) {
+    width: 30%;
+    align-self: center;
+    margin-top: 15px;
+  }
   @media (max-width: 600px) {
     align-self: center;
     width: 40%;

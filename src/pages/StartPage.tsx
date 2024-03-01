@@ -53,6 +53,13 @@ const FirstPageImg = styled.div<{ backgroundImage: string }>`
   grid-row-start: 1;
   grid-row-end: 6;
 
+  @media (max-width: 1025px) {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  }
+
   @media (max-width: 600px) {
     order: 2;
     width: 100%;
@@ -73,6 +80,10 @@ const TextBox = styled.h1`
   font-family: "Ledger";
   font-weight: 100;
 
+  @media (max-width: 1025px) {
+    display: none;
+  }
+
   @media (max-width: 600px) {
     display: none;
   }
@@ -80,6 +91,17 @@ const TextBox = styled.h1`
 
 const TextBoxMobile = styled.h1`
 display: none;
+
+@media (max-width: 1025px) {
+  font-size: 35px;
+  color: white;
+  font-family: "Ledger";
+  display: grid;
+  place-items: center;
+  grid-column-start: 3;
+  grid-column-end: 11;
+  grid-row-start: 1;
+}
 
 @media (max-width: 600px) {
   font-weight: 100;
@@ -115,6 +137,14 @@ const ButtonForRooms = styled(Link)`
     background-color: white;
     color: #183717;
     transition: color 1.5s ease;
+  }
+
+  @media (max-width: 1025px) {
+    font-size: 20px;
+    grid-column-start: 3;
+    grid-column-end: 11;
+    grid-row-start: 5;
+    margin: 25px 25px;
   }
 
   @media (max-width: 600px) {

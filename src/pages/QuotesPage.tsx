@@ -22,7 +22,7 @@ const ParentContainer = styled.div`
   padding: 0px;
   height: 100%;
   width: 55%;
-
+}
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -76,7 +76,7 @@ const Author = styled.p`
 `;
 
 const GenerateButton = styled(Button)`
-  margin: 0px;
+  margin: 0px 0px 10px 0px;
   padding: 15px;
   width: 35%;
 

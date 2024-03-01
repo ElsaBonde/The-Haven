@@ -12,7 +12,7 @@ const FlexDiv = styled.div`
   justify-content: center;
   gap: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     margin: 10px;
     padding-top: 20px;
     border-top: 2px solid #183717;
@@ -30,7 +30,7 @@ const TextTitle = styled.h1`
   font-size: 30px;
   margin: 10px 0px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     font-size: 20px;
   }
 `;
@@ -39,7 +39,7 @@ const Text = styled.p`
   font-size: 20px;
   margin: 10px 0px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     font-size: 17px;
   }
 `;
@@ -52,7 +52,7 @@ const SmallText = styled.p`
   font-size: 15px;
   margin: 10px 0px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     font-size: 12px;
   }
 `;

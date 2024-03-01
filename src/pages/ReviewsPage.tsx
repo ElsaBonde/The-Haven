@@ -21,6 +21,9 @@ const OuterDiv = styled.div`
   width: 55%;
   overflow-y: auto;
 
+  @media (max-width: 1025px) {
+    width: 80%;
+  }
   @media (max-width: 600px) {
     width: 100%;
   }

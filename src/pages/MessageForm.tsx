@@ -22,7 +22,7 @@ const Form = styled.form`
   flex-direction: column;
   margin-right: 80px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     margin: 10px;
     padding-top: 10px;
     border-top: 2px solid #183717;
@@ -57,7 +57,7 @@ const SendButton = styled(Button)`
   padding: 15px;
   width: 25%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     width: 40%;
     align-self: center;
   }
