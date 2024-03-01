@@ -7,6 +7,7 @@ const BackgroundDiv = styled.div`
   background-image: url(${PalmLeaves});
   background-size: cover;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +23,14 @@ const ParentContainer = styled.div`
   padding: 0px;
   height: 100%;
   width: 55%;
-}
+
+  @media (max-width: 1025px) {
+    width: 80%;
+  }
   @media (max-width: 600px) {
     width: 100%;
   }
-`;
+`
 
 const TextDiv = styled.div`
   padding: 0px 35px;

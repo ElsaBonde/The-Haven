@@ -46,12 +46,12 @@ The website is built using Vite, React and TypeScript. All images are created us
 
 [x] Projektmappen innehåller en README.md fil 
 
-[ ] Uppgiften lämnas in i tid!
+[x] Uppgiften lämnas in i tid!
 
-[ ] Muntlig presentation är genomförd
+[x] Muntlig presentation är genomförd
 
 ### Krav för väl godkänt:
-[ ] Alla punkter för godkänt är uppfyllda
+[x] Alla punkter för godkänt är uppfyllda
 
 [x] Ett “CSS i JS“ lib skall användas för att skriva CSS.
 

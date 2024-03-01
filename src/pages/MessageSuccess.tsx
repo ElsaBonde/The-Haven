@@ -69,8 +69,7 @@ const LikeDiv = styled.div`
 `;
 
 const Heart = styled.div<HeartProps>`
-  background-image: url(${(props) =>
-    props.isFilled ? FilledHeart : OutlineHeart});
+  background-image: url(${(props) => props.isFilled ? FilledHeart : OutlineHeart});
   background-size: cover;
   width: 108px;
   height: 100px;
@@ -80,7 +79,7 @@ const Heart = styled.div<HeartProps>`
     width: 58px;
     height: 54px;
   }
-`;
+`
 
 //typ för props till Heart
 type HeartProps = {

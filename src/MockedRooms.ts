@@ -22,7 +22,7 @@ export const mockedRoom: Room[] = [
   },
   {
     id: "2",
-    image: room2Image,
+    image: room3Image,
     title: "Flower And Garden Room",
     subtitle: "Embrace nature's beauty",
     description:
@@ -30,7 +30,7 @@ export const mockedRoom: Room[] = [
   },
   {
     id: "3",
-    image: room3Image,
+    image: room2Image,
     title: "Luxury Room",
     subtitle: "Indulge in opulence and comfort",
     description:

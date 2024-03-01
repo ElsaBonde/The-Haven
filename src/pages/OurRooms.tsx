@@ -5,13 +5,13 @@ import { mockedRoom } from "../MockedRooms";
 import { Button, SiteTitle } from "../StyledElements";
 
 const PhotoDiv = styled.div`
-  flex-basis: 45%;
+  flex-basis: 40%;
   display: flex;
   align-items: center;
   margin: 0px 30px;
 
   @media (max-width: 1025px) {
-    margin: 10px 57px;
+    margin: 10px 85px;
   }
   @media (max-width: 600px) {
     margin: 20px 0px;
