@@ -34,7 +34,7 @@ To begin, clone the repository to your computer, open the folder in your IDE and
 To launch the game, execute `npm run dev`, then open your web browser and navigate to your right localhost server.
 
 ## Tools used to write application
-The website is built using Vite, React and TypeScript. All images are created using gencraft (https://gencraft.com/). The user interface design was originally created in Figma.
+The website is built using Vite, Styled-components, React and TypeScript. All images are created using gencraft (https://gencraft.com/). The user interface design was originally created in Figma.
 
 ## Kravlista (för David)
 ### Krav för godkänt
